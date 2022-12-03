@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}О нас{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/about_us/about_us.css' %}"> {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="text">
+            <h2>Тренажерный зал «ЮГ» в <b>Севастополе</b></h2><br>
+            Ищите просторный, современный и хорошо оборудованный фитнес-клуб в Севастополе? –
+            это «ЮГ», желаете заниматься с профессиональным персональным тренером? — тогда Вам снова к нам!
+            «ЮГ» – это настоящее содружество активных, позитивных и уверенных в себе людей. Наши клиенты –
+            это все те, кому нравится выглядеть привлекательно и стильно. Фитнес-клуб «ЮГ» предлагает больше,
+            чем членство в спортивном клубе в городе Севастополь. «ЮГ» – это философия самосовершенствования,
+            которая предполагает не только физические упражнения, но и духовное обогащение.
+        </div>
+        <img src="{% static 'img/black_tshirt_man_back-transformed.png' %}" alt = ''>
+        <div class="btn-div">
+            <a href="{% url 'main-page' %}"><btn class="btn btn-warning">Записаться</btn></a>
+            <a href="{% url 'contacts-page' %}"><btn class="btn btn-info">Контакты</btn></a>
+        </div>
+    </div>
+{% endblock %}

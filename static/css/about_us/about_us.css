@@ -1,0 +1,22 @@
+.container{
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 25%;
+    margin-right: 40%;
+    color: #fff;
+}
+
+.container .text{
+    float: left;
+    max-width: 600px;
+    font-size: 20px;
+}
+
+.container img {
+    float: right;
+    width: 30%;
+    position: relative;
+    top: -100px;
+}
+

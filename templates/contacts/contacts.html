@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <p>Nope!</p>
+    <a href="{% url 'main-page' %}"><btn class="btn btn-warning">На главную</btn></a> <a href="{% url 'about-page' %}"><btn class="btn btn-info">О нас</btn></a>
+{% endblock %}
