@@ -23,6 +23,17 @@
         </ul>
     </div>
     {% block content %}
+        <div class='container'>
+            {% for product in info %}
+                <div class="cont-image"><img src="{{ product.image.url }}" alt=""><br></div>
+                <div class="cont-text">
+                    <h2>{{ product.title }}</h2><br>
+                    {{ product.desc }}<br>
+                    {{ product.price }} руб.<br>
+                    {{ product.date }}<br>
+                </div>
+            {% endfor %}
+        </div>
     {% endblock %}
 </body>
 </html>

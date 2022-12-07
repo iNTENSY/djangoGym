@@ -15,6 +15,7 @@ body{
     padding: 2.5%;
     color: #fff;
     border-right: 5px solid #4d4d4d;
+    position: fixed;
 }
 
 .header img{
@@ -52,4 +53,12 @@ body{
     color: #eb5959;
     text-decoration: none;
     transform: scale(1.05);
+}
+
+.container{
+    margin-left: 500px;
+    color: #fff;
+}
+.container img{
+    width: 20%;
 }

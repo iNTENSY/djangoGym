@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from .models import Product
 
 def main_page(request):
-    return render(request, 'base.html')
+    data = Product.objects.all()
+    content = {
+        'info': data
+    }
+    return render(request, 'base.html', content)
 
 def about_page(request):
     return render(request, 'about_us/about_us.html')
