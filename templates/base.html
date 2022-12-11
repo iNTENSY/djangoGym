@@ -19,7 +19,7 @@
             <a href="{% url 'about-page' %}"><li><i class="fa-solid fa-address-book"></i> О нас</li></a>
             <a href="{% url 'contacts-page' %}"><li><i class="fa-solid fa-address-card"></i> Контакты</li></a>
             <a href="#"><li><i class="fa-solid fa-comments"></i> Комментарии</li></a>
-            <a href="{% url 'login-page' %}"><li><i class="fa-sharp fa-solid fa-right-to-bracket"></i>> Войти</li></a>
+            <a href="{% url 'users:user-login' %}"><li><i class="fa-sharp fa-solid fa-right-to-bracket"></i>> Войти</li></a>
         </ul>
     </div>
     {% block content %}

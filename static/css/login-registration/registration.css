@@ -11,7 +11,7 @@ body{
     position: fixed;
     margin-left: 36%;
     margin-top: 10%;
-    height: 45%;
+    height: 55%;
     display: flex;
     justify-content: center;
     max-width: 500px;
@@ -23,7 +23,7 @@ div label{
 }
 
 form{
-    padding-top: 5%;
+    padding-top: 7%;
 }
 
 button{
