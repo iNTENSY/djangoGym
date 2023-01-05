@@ -21,12 +21,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_page, name='main-page'),
-    path('about/', about_page, name='about-page'),
-    path('contacts/', contacts_page, name='contacts-page'),
+    path('__debug__/', include('debug_toolbar.urls')),
+    path('', include('main.urls', namespace='main')),
     path('user/', include('users.urls', namespace='users')),
-    # path('login/', login, name='login-page'),
-    # path('registration/', registration, name='registration-page'),
 ]
 
 if settings.DEBUG:

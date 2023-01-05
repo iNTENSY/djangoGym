@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div style="padding-left: 500px; color: white;">
+        {% if item.image %}
+            <div class="cont-image"><img src="{{ item.image.url }}" alt=""><br></div>
+        {% endif %}
+        <div class="cont-text">
+            <h2>{{ item.title }}</h2><br>
+            {{ item.price }} руб.<br>
+            {{ item.desc }}<br>
+        </div>
+    </div>
+{% endblock %}

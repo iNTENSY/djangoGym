@@ -15,22 +15,25 @@
         <span class = 'logo'>Зал "ЮГ"</span>
         <h3>Навигация</h3>
         <ul>
-            <a href="{% url 'main-page' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
-            <a href="{% url 'about-page' %}"><li><i class="fa-solid fa-address-book"></i> О нас</li></a>
-            <a href="{% url 'contacts-page' %}"><li><i class="fa-solid fa-address-card"></i> Контакты</li></a>
+            <a href="{% url 'main:main-page' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href="{% url 'main:about-page' %}"><li><i class="fa-solid fa-address-book"></i> О нас</li></a>
+            <a href="{% url 'main:contacts-page' %}"><li><i class="fa-solid fa-address-card"></i> Контакты</li></a>
             <a href="#"><li><i class="fa-solid fa-comments"></i> Комментарии</li></a>
-            <a href="{% url 'users:user-login' %}"><li><i class="fa-sharp fa-solid fa-right-to-bracket"></i>> Войти</li></a>
+            {% if request.user.is_authenticated  %}
+                <li><a href="{% url 'users:profile' request.user.pk %}"><i class="fa-sharp fa-solid fa-right-to-bracket"></i> {{ request.user.username }}</a> | <a href='{% url 'users:logout' %}'>Выйти</a></li>
+            {% else %}
+                <li><a href="{% url 'users:user-login' %}"><i class="fa-sharp fa-solid fa-right-to-bracket"></i> Войти</a> | <a href="{% url 'users:user-registration' %}"><i class="fa-sharp fa-solid fa-gears"></i> Регистрация</a></li>
+            {% endif %}
         </ul>
     </div>
     {% block content %}
         <div class='container'>
-            {% for product in info %}
-                <div class="cont-image"><img src="{{ product.image.url }}" alt=""><br></div>
+            {% for product in products %}
                 <div class="cont-text">
                     <h2>{{ product.title }}</h2><br>
-                    {{ product.desc }}<br>
+                    {{ product.category__name }}<br>
                     {{ product.price }} руб.<br>
-                    {{ product.date }}<br>
+                    <p><a href="{% url 'main:product-detail' product.pk %}">Подробнее</a></p>
                 </div>
             {% endfor %}
         </div>

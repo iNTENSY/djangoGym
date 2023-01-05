@@ -16,8 +16,8 @@
         </div>
         <img src="{% static 'img/black_tshirt_man_back-transformed.png' %}" alt = ''>
         <div class="btn-div">
-            <a href="{% url 'main-page' %}"><btn class="btn btn-warning">Записаться</btn></a>
-            <a href="{% url 'contacts-page' %}"><btn class="btn btn-info">Контакты</btn></a>
+            <a href="{% url 'main:main-page' %}"><btn class="btn btn-warning">Записаться</btn></a>
+            <a href="{% url 'main:contacts-page' %}"><btn class="btn btn-info">Контакты</btn></a>
         </div>
     </div>
 {% endblock %}
